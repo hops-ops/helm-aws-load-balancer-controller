@@ -1,0 +1,24 @@
+apiVersion: pkg.crossplane.io/v1
+kind: Configuration
+metadata:
+  name: helm-aws-load-balancer-controller
+spec:
+  package: ghcr.io/hops-ops/helm-aws-load-balancer-controller:{{ .Values.version }}
+  packagePullSecrets:
+    - name: ghcr
+  skipDependencyResolution: {{ .Values.skipDependencyResolution }}
+
+{{- if .Values.skipDependencyResolution }}
+---
+# Only rendered when skipDependencyResolution=true (platform/advanced use case)
+# When false, Crossplane automatically resolves and installs embedded functions
+apiVersion: pkg.crossplane.io/v1
+kind: Function
+metadata:
+  name: hops-ops-helm-aws-load-balancer-controllerrender
+spec:
+  package: ghcr.io/hops-ops/helm-aws-load-balancer-controller_render:{{ .Values.version }}
+  packagePullSecrets:
+    - name: ghcr
+  skipDependencyResolution: {{ .Values.skipDependencyResolution }}
+{{- end }}

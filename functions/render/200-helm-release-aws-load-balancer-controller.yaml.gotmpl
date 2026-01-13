@@ -1,0 +1,39 @@
+# code: language=yaml
+#
+# Helm release for aws-load-balancer-controller
+#
+
+{{- $alb := $state.awsLoadBalancerController }}
+
+---
+apiVersion: helm.m.crossplane.io/v1beta1
+kind: Release
+metadata:
+  name: {{ $alb.releaseName }}
+  annotations:
+    {{ setResourceNameAnnotation "helm-release-aws-load-balancer-controller" }}
+  labels: {{ $alb.labels | toJson }}
+spec:
+  managementPolicies: {{ $alb.managementPolicies | toJson }}
+  forProvider:
+    chart:
+      name: aws-load-balancer-controller
+      repository: https://aws.github.io/eks-charts
+      version: 1.11.0
+    namespace: {{ $alb.namespace }}
+    {{- if $alb.overrideAllValues }}
+    values:
+      {{- toYaml $alb.overrideAllValues | nindent 6 }}
+    {{- else }}
+    values:
+      fullnameOverride: aws-load-balancer-controller
+      nameOverride: aws-load-balancer-controller
+      clusterName: {{ $alb.clusterName }}
+      {{- if $alb.values }}
+      {{- toYaml $alb.values | nindent 6 }}
+      {{- end }}
+    {{- end }}
+  rollbackLimit: 3
+  providerConfigRef:
+    name: {{ $alb.providerConfigRef.name }}
+    kind: {{ $alb.providerConfigRef.kind }}

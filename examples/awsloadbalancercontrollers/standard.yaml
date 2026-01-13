@@ -1,0 +1,15 @@
+apiVersion: helm.hops.ops.com.ai/v1alpha1
+kind: AWSLoadBalancerController
+metadata:
+  name: aws-load-balancer-controller
+  namespace: example-env
+spec:
+  clusterName: example-cluster
+  labels:
+    team: platform
+  namespace: kube-system
+  values:
+    replicaCount: 2
+    serviceAccount:
+      create: true
+      name: aws-load-balancer-controller
