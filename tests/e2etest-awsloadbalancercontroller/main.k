@@ -29,8 +29,15 @@ _items = [
                 {
                     apiVersion = "helm.m.crossplane.io/v1beta1"
                     kind = "ProviderConfig"
-                    metadata.name = "default"
-                    spec.credentials.source = "InjectedIdentity"
+                    metadata = {
+                        name = "default"
+                        namespace = "default"
+                    }
+                    spec = {
+                        credentials = {
+                            source = "InjectedIdentity"
+                        }
+                    }
                 }
             ]
 
