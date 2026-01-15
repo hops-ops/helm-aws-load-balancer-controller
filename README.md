@@ -37,7 +37,7 @@ spec:
 
 ```yaml
 apiVersion: helm.aws.hops.ops.com.ai/v1alpha1
-kind: AWSLoadBalancerController
+kind: LoadBalancerController
 metadata:
   name: aws-load-balancer-controller
   namespace: example-env

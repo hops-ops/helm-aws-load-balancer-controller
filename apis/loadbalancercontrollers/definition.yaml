@@ -5,7 +5,7 @@ metadata:
 spec:
   group: helm.aws.hops.ops.com.ai
   names:
-    kind: AWSLoadBalancerController
+    kind: LoadBalancerController
     plural: loadbalancercontrollers
   scope: Namespaced
   versions:
@@ -14,11 +14,11 @@ spec:
     served: true
     schema:
       openAPIV3Schema:
-        description: AWSLoadBalancerController installs the AWS Load Balancer Controller Helm chart.
+        description: LoadBalancerController installs the AWS Load Balancer Controller Helm chart.
         type: object
         properties:
           spec:
-            description: AWSLoadBalancerControllerSpec defines the desired state of AWSLoadBalancerController.
+            description: AWSLoadBalancerControllerSpec defines the desired state of LoadBalancerController.
             type: object
             properties:
               clusterName:
@@ -32,7 +32,7 @@ spec:
                 default:
                 - "*"
               labels:
-                description: Custom labels applied to all managed resources. Merged with default labels (hops.ops.com.ai/managed, hops.ops.com.ai/awsloadbalancercontroller).
+                description: Custom labels applied to all managed resources. Merged with default labels (hops.ops.com.ai/managed, hops.ops.com.ai/loadbalancercontroller).
                 type: object
                 additionalProperties:
                   type: string
@@ -67,7 +67,7 @@ spec:
             required:
             - clusterName
           status:
-            description: AWSLoadBalancerControllerStatus defines the observed state of AWSLoadBalancerController.
+            description: AWSLoadBalancerControllerStatus defines the observed state of LoadBalancerController.
             type: object
             properties:
               ready:

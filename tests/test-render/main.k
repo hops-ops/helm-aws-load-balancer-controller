@@ -2,7 +2,7 @@ import models.io.upbound.dev.meta.v1alpha1 as metav1alpha1
 import models.k8s.apimachinery.pkg.apis.meta.v1 as metav1
 
 # ==============================================================================
-# Unit tests for AWSLoadBalancerController XRD
+# Unit tests for LoadBalancerController XRD
 #
 # Philosophy: Test YOUR API, not the provider's API.
 # - render/validate already checks provider schema correctness
@@ -22,7 +22,7 @@ _items = [
             validate = False
             xr = {
                 apiVersion = "helm.aws.hops.ops.com.ai/v1alpha1"
-                kind = "AWSLoadBalancerController"
+                kind = "LoadBalancerController"
                 metadata.name = "test-alb"
                 spec = {
                     clusterName = "test-cluster"
@@ -51,7 +51,7 @@ _items = [
             validate = False
             xr = {
                 apiVersion = "helm.aws.hops.ops.com.ai/v1alpha1"
-                kind = "AWSLoadBalancerController"
+                kind = "LoadBalancerController"
                 metadata.name = "labeled-alb"
                 spec = {
                     clusterName = "test-cluster"
@@ -69,7 +69,7 @@ _items = [
                         name = "labeled-alb"
                         labels = {
                             "hops.ops.com.ai/managed" = "true"
-                            "hops.ops.com.ai/awsloadbalancercontroller" = "labeled-alb"
+                            "hops.ops.com.ai/loadbalancercontroller" = "labeled-alb"
                             team = "platform"
                             environment = "staging"
                         }
@@ -91,7 +91,7 @@ _items = [
             validate = False
             xr = {
                 apiVersion = "helm.aws.hops.ops.com.ai/v1alpha1"
-                kind = "AWSLoadBalancerController"
+                kind = "LoadBalancerController"
                 metadata.name = "override-test"
                 spec = {
                     clusterName = "my-cluster"
@@ -129,7 +129,7 @@ _items = [
             validate = False
             xr = {
                 apiVersion = "helm.aws.hops.ops.com.ai/v1alpha1"
-                kind = "AWSLoadBalancerController"
+                kind = "LoadBalancerController"
                 metadata.name = "ns-test"
                 spec = {
                     clusterName = "test-cluster"

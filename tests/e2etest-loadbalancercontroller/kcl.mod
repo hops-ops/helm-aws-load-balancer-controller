@@ -1,5 +1,5 @@
 [package]
-name = "e2etest-awsloadbalancercontroller"
+name = "e2etest-loadbalancercontroller"
 version = "0.0.1"
 
 [dependencies]
