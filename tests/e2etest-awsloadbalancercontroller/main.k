@@ -46,7 +46,7 @@ _items = [
             # The XR to test
             manifests = [
                 {
-                    apiVersion = "helm.hops.ops.com.ai/v1alpha1"
+                    apiVersion = "helm.aws.hops.ops.com.ai/v1alpha1"
                     kind = "AWSLoadBalancerController"
                     metadata = {
                         name = _test_name

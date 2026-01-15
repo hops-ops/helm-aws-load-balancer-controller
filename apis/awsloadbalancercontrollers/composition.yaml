@@ -1,10 +1,10 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: Composition
 metadata:
-  name: awsloadbalancercontrollers.helm.hops.ops.com.ai
+  name: awsloadbalancercontrollers.helm.aws.hops.ops.com.ai
 spec:
   compositeTypeRef:
-    apiVersion: helm.hops.ops.com.ai/v1alpha1
+    apiVersion: helm.aws.hops.ops.com.ai/v1alpha1
     kind: AWSLoadBalancerController
   mode: Pipeline
   pipeline:
