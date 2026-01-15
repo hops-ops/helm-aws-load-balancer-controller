@@ -19,8 +19,7 @@ _items = [
         metadata.name = "loadbalancercontroller-helm"
         spec = {
             crossplane = {
-                version = "2.2.0"
-                autoUpgrade.channel = "None"
+                autoUpgrade.channel = "Stable"
             }
             skipDelete = False
 
