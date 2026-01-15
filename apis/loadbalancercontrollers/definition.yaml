@@ -1,12 +1,12 @@
 apiVersion: apiextensions.crossplane.io/v2
 kind: CompositeResourceDefinition
 metadata:
-  name: awsloadbalancercontrollers.helm.aws.hops.ops.com.ai
+  name: loadbalancercontrollers.helm.aws.hops.ops.com.ai
 spec:
   group: helm.aws.hops.ops.com.ai
   names:
     kind: AWSLoadBalancerController
-    plural: awsloadbalancercontrollers
+    plural: loadbalancercontrollers
   scope: Namespaced
   versions:
   - name: v1alpha1

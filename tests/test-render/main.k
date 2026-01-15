@@ -16,8 +16,8 @@ _items = [
     metav1alpha1.CompositionTest {
         metadata.name = "minimal-renders-helm-release"
         spec = {
-            compositionPath = "apis/awsloadbalancercontrollers/composition.yaml"
-            xrdPath = "apis/awsloadbalancercontrollers/definition.yaml"
+            compositionPath = "apis/loadbalancercontrollers/composition.yaml"
+            xrdPath = "apis/loadbalancercontrollers/definition.yaml"
             timeoutSeconds = 60
             validate = False
             xr = {
@@ -45,8 +45,8 @@ _items = [
     metav1alpha1.CompositionTest {
         metadata.name = "custom-labels-merged-with-defaults"
         spec = {
-            compositionPath = "apis/awsloadbalancercontrollers/composition.yaml"
-            xrdPath = "apis/awsloadbalancercontrollers/definition.yaml"
+            compositionPath = "apis/loadbalancercontrollers/composition.yaml"
+            xrdPath = "apis/loadbalancercontrollers/definition.yaml"
             timeoutSeconds = 60
             validate = False
             xr = {
@@ -85,8 +85,8 @@ _items = [
     metav1alpha1.CompositionTest {
         metadata.name = "override-all-values"
         spec = {
-            compositionPath = "apis/awsloadbalancercontrollers/composition.yaml"
-            xrdPath = "apis/awsloadbalancercontrollers/definition.yaml"
+            compositionPath = "apis/loadbalancercontrollers/composition.yaml"
+            xrdPath = "apis/loadbalancercontrollers/definition.yaml"
             timeoutSeconds = 60
             validate = False
             xr = {
@@ -123,8 +123,8 @@ _items = [
     metav1alpha1.CompositionTest {
         metadata.name = "default-namespace-kube-system"
         spec = {
-            compositionPath = "apis/awsloadbalancercontrollers/composition.yaml"
-            xrdPath = "apis/awsloadbalancercontrollers/definition.yaml"
+            compositionPath = "apis/loadbalancercontrollers/composition.yaml"
+            xrdPath = "apis/loadbalancercontrollers/definition.yaml"
             timeoutSeconds = 60
             validate = False
             xr = {

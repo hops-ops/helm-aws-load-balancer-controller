@@ -19,7 +19,7 @@ _items = [
         metadata.name = "awsloadbalancercontroller-helm"
         spec = {
             crossplane = {
-                version = "2.0.2-up.5"
+                version = "2.2.0"
                 autoUpgrade.channel = "None"
             }
             defaultConditions = ["Ready"]
